@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paul & Crystal | Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;font-family:'Quicksand',sans-serif;background:#1f1f1f;color:#fff;text-align:center}
+    header{background:url('https://images.unsplash.com/photo-1530026405186-ed1f13931384')center/cover no-repeat;padding:80px 20px;color:#fff}
+    header h1{font-family:'Antonio',sans-serif;font-size:48px;margin:0;letter-spacing:2px}
+    header p{font-size:20px;margin:10px 0}
+    #countdown{font-size:24px;margin-top:20px;font-weight:bold}
+    .logo{width:120px;margin:20px auto 0}
+    .qr{width:100px;margin:20px auto}
+    section{padding:40px 20px;max-width:800px;margin:auto}
+    h2{font-size:32px;font-family:'Antonio',sans-serif;color:#f9b17a}
+    .rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:90%;max-width:500px;margin:10px auto;padding:12px;border:none;font-size:16px;border-radius:5px}
+    .rsvp-form button{background:#f9b17a;color:#1f1f1f;padding:12px 30px;font-size:18px;margin-top:10px;border:none;border-radius:5px;cursor:pointer}
+    footer{background:#2b2b2b;padding:20px;font-size:14px}
+    @media (max-width:600px){
+      header h1{font-size:36px}
+      h2{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="logo.png" alt="Paul & Crystal Logo">
+  <header>
+    <h1>Paul Shand & Crystal Wharton</h1>
+    <p>Wedding Ceremony: Pembrokeshire Archives, Prendergast, Haverfordwest SA61 2PE – 4 pm</p>
+    <p>Reception: The Pavilion, Withybush Rd, Haverfordwest SA62 4BW</p>
+    <div id="countdown">Loading countdown…</div>
+    <img class="qr" src="qrcode.png" alt="Scan for website">
+  </header>
+  <section>
+    <h2>Our Story</h2>
+    <p>From open roads to open hearts — our love grew wild, free, and full of fire. We’re tying the knot and want you along for the ride.</p>
+  </section>
+  <section>
+    <h2>RSVP</h2>
+    <form class="rsvp-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="email" name="email" placeholder="Email Address" required/>
+      <select name="attendance" required>
+        <option value="">Will you attend?</option>
+        <option value="yes">Yes – wouldn’t miss it!</option>
+        <option value="no">Sadly can’t make it</option>
+      </select>
+      <textarea name="message" placeholder="Any notes? Dietary needs?" rows="4"></textarea>
+      <button type="submit">Send RSVP</button>
+    </form>
+  </section>
+  <footer>
+    <p>© Paul Shand & Crystal Wharton | Wedding 2025</p>
+  </footer>
+  <script>
+    const weddingDate=new Date("2025-10-18T16:00:00").getTime();
+    const el=document.getElementById("countdown");
+    setInterval(()=>{
+      const d=new Date().getTime();
+      const diff=weddingDate-d;
+      if(diff<0){el.innerHTML="We're married!";return;}
+      const days=Math.floor(diff/864e5);
+      const hrs=Math.floor((diff%864e5)/36e5);
+      const mins=Math.floor((diff%36e5)/6e4);
+      const secs=Math.floor((diff%6e4)/1e3);
+      el.innerHTML=`${days}d ${hrs}h ${mins}m ${secs}s to go`;
+    },1000);
+  </script>
+</body>
+</html>

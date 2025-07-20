@@ -27,17 +27,24 @@
 <body>
   <img class="logo" src="logo.png" alt="Paul & Crystal Logo">
   <header>
+  <nav style="background:#2b2b2b;padding:10px 0;">
+    <a href="#ceremony" style="margin:0 15px;color:#f9b17a;text-decoration:none;font-weight:bold;">Ceremony</a>
+    <a href="#venue" style="margin:0 15px;color:#f9b17a;text-decoration:none;font-weight:bold;">Venue</a>
+    <a href="#menu" style="margin:0 15px;color:#f9b17a;text-decoration:none;font-weight:bold;">Menu</a>
+    <a href="#rsvp" style="margin:0 15px;color:#f9b17a;text-decoration:none;font-weight:bold;">RSVP</a>
+  </nav>
+
     <h1>Paul Shand & Crystal Wharton</h1>
     <p>Wedding Ceremony: Pembrokeshire Archives, Prendergast, Haverfordwest SA61 2PE – 4 pm</p>
     <p>Reception: The Pavilion, Withybush Rd, Haverfordwest SA62 4BW</p>
     <div id="countdown">Loading countdown…</div>
     <img class="qr" src="qrcode.png" alt="Scan for website">
   </header>
-  <section>
+  <section id="ceremony">
     <h2>Our Story</h2>
     <p>From open roads to open hearts — our love grew wild, free, and full of fire. We’re tying the knot and want you along for the ride.</p>
   </section>
-  <section>
+  <section id="venue">
     <h2>RSVP</h2>
     <form class="rsvp-form" action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required/>
